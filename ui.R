@@ -4,11 +4,17 @@ SampleSize = Simulations/10 # number of observations
 shinyUI(pageWithSidebar(
     headerPanel("Central Limit Theorem"),
     sidebarPanel(
-        sliderInput('Simulations', 'Number of Simulation',
-                    value = Simulations/2, min = 100, max = Simulations, step = 100),
+        h4("Use the Slider bar below to see the effect of on Sample and Simulation Size on the distribution."),
 
         sliderInput('SampleSize', 'Sample Size / Simulation',
-                    value = SampleSize/2, min = 10, max = SampleSize, step = 10)
+                    value = SampleSize/2, min = 50, max = SampleSize, step = 10),
+        p("By increasing the Sample Size, we would see the distribution becomes narrower."),
+        
+        br(),
+        
+        sliderInput('Simulations', 'Number of Simulation',
+                    value = Simulations/2, min = 500, max = Simulations, step = 100),
+        p("Note that the number of simulations does not has much effect.")
     ),
     mainPanel(
         plotOutput('myHist'),
