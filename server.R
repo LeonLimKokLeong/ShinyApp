@@ -2,10 +2,10 @@ shinyServer(
     function(input, output) {
         output$myHist <- renderPlot({
             set.seed(1) # so that this is reproducible
-            Simulations = input$Simulations
+            Observations = input$Observations
             SampleSize = input$SampleSize
             lambda = 0.2
-            dataset = data.frame(matrix(rexp(Simulations * SampleSize, lambda), Simulations))
+            dataset = data.frame(matrix(rexp(Observations * SampleSize, lambda), Observations))
             
             dataset$row_mean = rowMeans(dataset[,])
             clt_mean = mean(dataset$row_mean)
