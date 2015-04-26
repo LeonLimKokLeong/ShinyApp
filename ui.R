@@ -20,6 +20,6 @@ shinyUI(pageWithSidebar(
         plotOutput('myHist'),
         p("The Central Limit Theorem (CLT) states that, given certain conditions, the mean of a sufficiently large number of independent random variables, each with a well-defined mean and well-defined variance, will be approximately normally distributed."),
         p("1. The averages of samples have approximately normal distriution."),
-        p("2. The bigger the sample size, the distribution of averages becomes more normal and narrower.")
+        p("2. The bigger the sample size, the deviation and variance of averages becomes more normal and narrower.")
     )
 ))
